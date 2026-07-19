@@ -2,7 +2,7 @@
 
 A modern, responsive, and interactive personal portfolio built with **React** to showcase my projects, technical skills, certifications, and professional journey as a **MERN Stack Developer**.
 
-🔗 **Live Demo:** https://your-netlify-link.netlify.app
+🔗 **Live Demo:** https://porfoliios.netlify.app/
 
 ---
 
