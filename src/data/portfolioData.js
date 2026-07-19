@@ -1,4 +1,5 @@
 export const personalInfo = {
+  logo: "Waris",
   name: "Muhammad Waris",
   role: "MERN Stack Developer",
   tagline:
@@ -235,5 +236,40 @@ export const socialLinks = [
   {
     name: "Email",
     url: "warishakrow3@gmail.com",
+  },
+];
+
+export const navLinks = [
+  {
+    name: "Home",
+    path: "#home",
+  },
+  {
+    name: "About",
+    path: "#about",
+  },
+  {
+    name: "Skills",
+    path: "#skills",
+  },
+  {
+    name: "Projects",
+    path: "#projects",
+  },
+  {
+    name: "Experience",
+    path: "#experience",
+  },
+  {
+    name: "Education",
+    path: "#education",
+  },
+  {
+    name: "Certificates",
+    path: "#certificates",
+  },
+  {
+    name: "Contact",
+    path: "#contact",
   },
 ];
