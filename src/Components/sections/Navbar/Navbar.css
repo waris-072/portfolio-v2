@@ -1,25 +1,27 @@
-/* ===== NAVBAR ===== */
+/* ===========================
+   NAVBAR
+=========================== */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  
+
   /* Glassmorphism effect */
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(12px) saturate(180%);
-  
+
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  
+
+  transition: all var(--transition-base, 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94));
+
   /* Shadow for depth */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }
 
-/* Navbar scroll effect - add this class with JS */
+/* Navbar scroll effect */
 .navbar.scrolled {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px) saturate(200%);
@@ -36,28 +38,30 @@
 }
 
 .navbar-container {
-  max-width: 1200px;
+  max-width: var(--container-max, 1200px);
   margin: 0 auto;
   padding: 0.8rem 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 70px;
+  min-height: var(--header-height, 70px);
 }
 
-/* ===== LOGO ===== */
+/* ===========================
+   LOGO
+=========================== */
 .logo {
   font-size: 1.8rem;
   font-weight: 900;
   letter-spacing: -0.5px;
-  
+
   /* Gradient text */
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color, #6C63FF));
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color, #6C63FF));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  
-  transition: all 0.3s ease;
+
+  transition: all var(--transition-base, 0.3s ease);
   text-decoration: none;
   position: relative;
 }
@@ -74,7 +78,9 @@
   transform: scale(1.05) rotate(-2deg);
 }
 
-/* ===== NAVIGATION ===== */
+/* ===========================
+   NAVIGATION
+=========================== */
 .nav-menu {
   display: flex;
   align-items: center;
@@ -91,11 +97,11 @@
   font-weight: 600;
   color: var(--text-color);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color var(--transition-base, 0.3s ease);
   letter-spacing: 0.3px;
 }
 
-/* Creative underline animation */
+/* Underline animation */
 .nav-menu a::after {
   content: "";
   position: absolute;
@@ -104,9 +110,9 @@
   transform: translateX(-50%);
   width: 0;
   height: 2.5px;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color, #6C63FF));
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color, #6C63FF));
   border-radius: 2px;
-  transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: width var(--transition-slow, 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94));
 }
 
 .nav-menu a:hover {
@@ -117,7 +123,7 @@
   width: 70%;
 }
 
-/* Active link - pill style */
+/* Active link */
 .nav-menu a.active {
   color: var(--primary-color);
   font-weight: 700;
@@ -128,14 +134,18 @@
   height: 3px;
 }
 
-/* ===== NAVBAR ACTIONS ===== */
+/* ===========================
+   NAVBAR ACTIONS
+=========================== */
 .navbar-actions {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-/* ===== THEME TOGGLE ===== */
+/* ===========================
+   THEME TOGGLE
+=========================== */
 .theme-toggle {
   width: 42px;
   height: 42px;
@@ -144,11 +154,11 @@
   align-items: center;
   border-radius: 50%;
   border: 1.5px solid var(--border-color);
-  background: var(--surface-color);
+  background: var(--card-bg);
   color: var(--text-color);
   cursor: pointer;
   font-size: 1.2rem;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all var(--transition-slow, 0.4s cubic-bezier(0.34, 1.56, 0.64, 1));
   position: relative;
   overflow: hidden;
 }
@@ -161,7 +171,7 @@
   background: var(--primary-color);
   opacity: 0;
   transform: scale(0);
-  transition: all 0.4s ease;
+  transition: all var(--transition-base, 0.4s ease);
 }
 
 .theme-toggle:hover {
@@ -180,26 +190,27 @@
   transform: scale(0.9);
 }
 
-/* Theme toggle icon rotation */
 .theme-toggle .icon {
-  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform var(--transition-slow, 0.6s cubic-bezier(0.34, 1.56, 0.64, 1));
 }
 
 .theme-toggle:hover .icon {
   transform: rotate(60deg);
 }
 
-/* ===== MENU TOGGLE (Mobile) ===== */
+/* ===========================
+   MENU TOGGLE (Mobile)
+=========================== */
 .menu-toggle {
   display: none;
   background: transparent;
   border: 1.5px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: var(--radius, 8px);
   padding: 0.5rem 0.7rem;
   color: var(--text-color);
   font-size: 1.5rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base, 0.3s ease);
   line-height: 1;
 }
 
@@ -213,39 +224,14 @@
   transform: scale(0.95);
 }
 
-/* Hamburger animation */
-.menu-toggle .hamburger {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  width: 24px;
-  transition: all 0.3s ease;
+.menu-toggle.active {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
-.menu-toggle .hamburger span {
-  display: block;
-  height: 2.5px;
-  width: 100%;
-  background: currentColor;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-  transform-origin: center;
-}
-
-.menu-toggle.active .hamburger span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-toggle.active .hamburger span:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
-}
-
-.menu-toggle.active .hamburger span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* ===== RESPONSIVE - TABLET & MOBILE ===== */
+/* ===========================
+   RESPONSIVE - TABLET
+=========================== */
 @media (max-width: 950px) {
   .navbar-container {
     padding: 0.6rem 5%;
@@ -267,9 +253,9 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(-20px) scale(0.98);
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: all var(--transition-slow, 0.4s cubic-bezier(0.34, 1.56, 0.64, 1));
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 var(--radius-lg, 20px) var(--radius-lg, 20px);
     pointer-events: none;
   }
 
@@ -318,8 +304,10 @@
   }
 }
 
-/* ===== SMALL MOBILE ===== */
-@media (max-width: 480px) {
+/* ===========================
+   RESPONSIVE - MOBILE
+=========================== */
+@media (max-width: 576px) {
   .logo {
     font-size: 1.4rem;
   }
@@ -346,20 +334,74 @@
     width: 34px;
     height: 34px;
     font-size: 0.9rem;
+    border-width: 1px;
   }
 
   .menu-toggle {
     padding: 0.4rem 0.6rem;
     font-size: 1.2rem;
-  }
-
-  .menu-toggle .hamburger {
-    width: 20px;
-    gap: 4px;
+    border-width: 1px;
   }
 }
 
-/* ===== ACCESSIBILITY ===== */
+/* ===========================
+   RESPONSIVE - SMALL MOBILE
+=========================== */
+@media (max-width: 380px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .logo::before {
+    font-size: 0.8rem;
+    margin-right: 4px;
+  }
+
+  .navbar-container {
+    padding: 0.4rem 3%;
+    min-height: 55px;
+  }
+
+  .nav-menu {
+    padding: 1rem 0.8rem;
+    gap: 1rem;
+  }
+
+  .nav-menu a {
+    font-size: 0.9rem;
+  }
+
+  .theme-toggle {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .menu-toggle {
+    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+    border-radius: var(--radius, 6px);
+  }
+
+  .navbar-actions {
+    gap: 0.5rem;
+  }
+}
+
+/* ===========================
+   DARK MODE
+=========================== */
+[data-theme="dark"] .navbar {
+  background: rgba(10, 10, 20, 0.6);
+}
+
+[data-theme="dark"] .nav-menu {
+  background: rgba(10, 10, 20, 0.95);
+}
+
+/* ===========================
+   ACCESSIBILITY
+=========================== */
 @media (prefers-reduced-motion: reduce) {
   .navbar,
   .navbar.scrolled,
@@ -369,5 +411,22 @@
   .menu-toggle,
   .logo {
     transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+
+  .navbar.scrolled {
+    transition-duration: 0.01ms !important;
+  }
+
+  .logo:hover {
+    transform: none !important;
+  }
+
+  .theme-toggle:hover {
+    transform: none !important;
+  }
+
+  .menu-toggle:hover {
+    transform: none !important;
   }
 }

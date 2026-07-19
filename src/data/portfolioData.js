@@ -1,3 +1,5 @@
+import { FaCode, FaRocket, FaLaptopCode, FaGraduationCap, FaUniversity, FaAward, FaBriefcase, FaUsers } from "react-icons/fa";
+
 export const personalInfo = {
   logo: "Waris",
   name: "Muhammad Waris",
@@ -5,9 +7,42 @@ export const personalInfo = {
   tagline:
     "Building responsive, scalable, and user-focused web applications with modern frontend and backend technologies.",
   description:
-    "Software Engineering student and MERN Stack Developer passionate about creating full-stack web solutions using React, Node.js, Express, and MongoDB. Experienced in developing responsive interfaces, RESTful APIs, database-driven applications, and integrating modern web technologies to solve real-world problems.",
+    "MERN Stack Developer focused on building responsive, scalable, and user-friendly web applications. I enjoy turning ideas into practical full-stack solutions using React, Node.js, Express, MongoDB, and modern web technologies while continuously improving my development skills and software engineering practices.",
+  resume: "/CV - Muhammad Waris.pdf",
 };
 
+export const aboutFacts = [
+  {
+    icon: FaLaptopCode,
+    title: "Role",
+    value: "MERN Stack Developer",
+  },
+  {
+    icon: FaGraduationCap,
+    title: "Education",
+    value: "BS Software Engineering",
+  },
+  {
+    icon: FaUniversity,
+    title: "University",
+    value: "University of Sindh",
+  },
+  {
+    icon: FaAward,
+    title: "CGPA",
+    value: "3.04 / 4.00",
+  },
+  {
+    icon: FaBriefcase,
+    title: "Internship",
+    value: "Web Development Intern",
+  },
+  {
+    icon: FaUsers,
+    title: "Leadership",
+    value: "FYP Project Leader",
+  },
+]
 
 export const skills = [
   {
@@ -47,6 +82,7 @@ export const skills = [
 export const projects = [
   {
     title: "AI-Powered Construction Cost Estimator (FYP)",
+    image: "/projects/fyp.png",
     description:
       "A full-stack AI-powered web application for predicting construction costs and project durations with report generation features.",
     technologies: [
@@ -68,6 +104,7 @@ export const projects = [
 
   {
     title: "MERN Stack Todo Application",
+    image: "/projects/mern-todo.png",
     description:
       "A full-stack task management application built with the MERN stack featuring complete CRUD operations.",
     technologies: [
@@ -87,6 +124,7 @@ export const projects = [
 
   {
     title: "Daily News - React News Aggregator",
+    image: "/projects/daily-news.png",
     description:
       "A React-based news application that fetches and displays real-time news from multiple categories.",
     technologies: [
@@ -106,6 +144,7 @@ export const projects = [
 
   {
     title: "Core Boards - Task Management Dashboard",
+    image: "/projects/dashboard.png",
     description:
       "A responsive task management dashboard with CRUD operations, filtering, and API integrations.",
     technologies: [
@@ -125,6 +164,7 @@ export const projects = [
 
   {
     title: "Notes Application",
+    image: "/projects/notes.png",
     description:
       "A client-side notes application with persistent storage and authentication flow simulation.",
     technologies: [
@@ -144,6 +184,7 @@ export const projects = [
 
   {
     title: "Portfolio Website (Version 1)",
+    image: "/projects/portfolio.png",
     description:
       "My first personal portfolio website built to showcase projects, skills, and frontend development journey.",
     technologies: [
@@ -163,35 +204,6 @@ export const projects = [
 ];
 
 
-export const experience = [
-  {
-    role: "Web Development Intern",
-    company: "Digital Empowerment Network",
-    duration: "July 2025 - September 2025",
-    description:
-      "Completed an intensive project-based internship focused on frontend development, CRUD applications, Git workflow, responsive design, and collaborative development practices.",
-  },
-
-  {
-    role: "Project Leader - AI Construction Cost Estimator (FYP)",
-    company: "University of Sindh, Jamshoro",
-    duration: "2025 - 2026",
-    description:
-      "Led a team of three members to develop a full-stack AI-powered construction cost estimation system using React, Flask, and MySQL.",
-  },
-];
-
-
-export const education = [
-  {
-    degree: "BS Software Engineering",
-    institute: "University of Sindh, Jamshoro",
-    duration: "2022 - 2025",
-    cgpa: "3.04 / 4.00",
-  },
-];
-
-
 export const certificates = [
   {
     title: "Web Development Internship",
@@ -202,11 +214,11 @@ export const certificates = [
     organization: "IBM SkillsBuild",
   },
   {
-    title: "React Essential Training",
-    organization: "LinkedIn Learning",
+    title: "Web Development Fundamentals",
+    organization: "IBM Skillsbuild",
   },
   {
-    title: "Getting Started as a Full-Stack Web Developer",
+    title: "React Essential Training",
     organization: "LinkedIn Learning",
   },
   {
@@ -227,15 +239,18 @@ export const certificates = [
 export const socialLinks = [
   {
     name: "GitHub",
+    icon: "github",
     url: "https://github.com/waris-072",
   },
   {
     name: "LinkedIn",
+    icon: "linkedin",
     url: "https://www.linkedin.com/in/waris-hakro-webdev",
   },
   {
     name: "Email",
-    url: "warishakrow3@gmail.com",
+    icon: "email",
+    url: "mailto:warishakrow3@gmail.com",
   },
 ];
 
@@ -255,14 +270,6 @@ export const navLinks = [
   {
     name: "Projects",
     path: "#projects",
-  },
-  {
-    name: "Experience",
-    path: "#experience",
-  },
-  {
-    name: "Education",
-    path: "#education",
   },
   {
     name: "Certificates",

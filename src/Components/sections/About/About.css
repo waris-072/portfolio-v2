@@ -1,0 +1,753 @@
+/* ===========================
+   About Section
+=========================== */
+.about-section {
+  padding: 6rem 5%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background decoration */
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(108, 99, 255, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-section::after {
+  content: "";
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(108, 99, 255, 0.03) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 4rem;
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max, 1200px);
+  margin: 0 auto;
+}
+
+/* ===========================
+   Left Content
+=========================== */
+.about-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.about-text-wrapper {
+  margin-bottom: 2rem;
+}
+
+.about-content p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-color);
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
+}
+
+.about-highlight {
+  font-size: 1.1rem !important;
+  line-height: 2 !important;
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--primary-color);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color, #6C63FF), #FF6B6B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* Mobile text (hidden by default) */
+.mobile-text {
+  display: none;
+}
+
+/* Desktop text (shown by default) */
+.desktop-text {
+  display: inline;
+}
+
+/* ===========================
+   Stats
+=========================== */
+.about-stats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 2rem;
+  background: var(--card-bg);
+  border-radius: var(--radius, 16px);
+  margin: 2rem 0 1.5rem 0;
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-base, 0.3s ease);
+}
+
+.about-stats:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 30px rgba(108, 99, 255, 0.1);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color, #6C63FF));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-color);
+  opacity: 0.7;
+  font-weight: 500;
+  margin-top: 0.2rem;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--border-color);
+}
+
+/* ===========================
+   Tech Stack Tags
+=========================== */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.tech-tag {
+  padding: 0.4rem 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full, 50px);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-color);
+  transition: all var(--transition-base, 0.3s ease);
+  cursor: default;
+}
+
+.tech-tag:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.15);
+}
+
+/* ===========================
+   Facts Wrapper
+=========================== */
+.about-facts-wrapper {
+  width: 520px;
+  flex-shrink: 0;
+}
+
+.facts-header {
+  margin-bottom: 1.5rem;
+}
+
+.facts-badge {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  background: var(--primary-color);
+  color: white;
+  border-radius: var(--radius-full, 50px);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.facts-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0.5rem 0 0 0;
+}
+
+/* ===========================
+   Facts Scroll Buttons (Mobile Only)
+=========================== */
+.facts-scroll-buttons {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 0.8rem;
+}
+
+.facts-scroll-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-base, 0.3s ease);
+  backdrop-filter: blur(10px);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.facts-scroll-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.15);
+}
+
+.facts-scroll-btn:active {
+  transform: scale(0.9);
+}
+
+.facts-scroll-left svg {
+  transform: rotate(180deg);
+}
+
+/* ===========================
+   Scrollable Facts
+=========================== */
+.about-facts {
+  max-height: 50vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-right: 0.5rem;
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+.about-facts::-webkit-scrollbar {
+  width: 4px;
+}
+
+.about-facts::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.about-facts::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 20px;
+}
+
+.about-facts {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) transparent;
+}
+
+/* ===========================
+   Fact Card
+=========================== */
+.fact-card {
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 1.5rem;
+  background: var(--card-bg);
+  border-radius: var(--radius, 16px);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-slow, 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94));
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  flex-shrink: 0;
+}
+
+.fact-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--primary-color), var(--accent-color, #6C63FF));
+  opacity: 0;
+  transition: opacity var(--transition-base, 0.3s ease);
+}
+
+.fact-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-hover, 0 8px 30px rgba(108, 99, 255, 0.12));
+}
+
+.fact-card:hover::before {
+  opacity: 1;
+}
+
+/* Fact Number */
+.fact-number {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.8rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--border-color);
+  letter-spacing: 0.5px;
+  opacity: 0.5;
+  transition: opacity var(--transition-base, 0.3s ease);
+}
+
+.fact-card:hover .fact-number {
+  opacity: 1;
+  color: var(--primary-color);
+}
+
+/* ===========================
+   Icon
+=========================== */
+.fact-icon-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.fact-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius, 14px);
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color, #6C63FF));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  position: relative;
+  z-index: 1;
+  transition: all var(--transition-base, 0.3s ease);
+}
+
+.fact-card:hover .fact-icon {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+.fact-icon-glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: var(--radius, 16px);
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color, #6C63FF), #FF6B6B);
+  opacity: 0;
+  filter: blur(8px);
+  transition: opacity var(--transition-base, 0.3s ease);
+}
+
+.fact-card:hover .fact-icon-glow {
+  opacity: 0.3;
+}
+
+/* ===========================
+   Text
+=========================== */
+.fact-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.fact-info h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  font-weight: 700;
+  transition: color var(--transition-base, 0.3s ease);
+}
+
+.fact-card:hover .fact-info h3 {
+  color: var(--primary-color);
+}
+
+.fact-info p {
+  margin: 0.3rem 0 0 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+/* ===========================
+   Responsive - Tablet
+=========================== */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .about-content {
+    width: 100%;
+  }
+
+  .about-text-wrapper p {
+    text-align: left;
+  }
+
+  .about-highlight {
+    padding-left: 1rem;
+  }
+
+  .about-facts-wrapper {
+    width: 100%;
+  }
+
+  .about-facts {
+    max-height: 400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    overflow-y: auto;
+  }
+
+  .fact-card {
+    min-height: 80px;
+    padding: 1rem 1.2rem;
+  }
+
+  .fact-number {
+    display: none;
+  }
+
+  .about-stats {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .facts-scroll-buttons {
+    display: none !important;
+  }
+}
+
+/* ===========================
+   Responsive - Mobile
+=========================== */
+@media (max-width: 576px) {
+  .about-section {
+    padding: 4rem 0;
+  }
+
+  .about-content {
+    padding: 0 5%;
+  }
+
+  /* Show mobile text, hide desktop text */
+  .mobile-text {
+    display: inline;
+  }
+
+  .desktop-text {
+    display: none;
+  }
+
+  .about-highlight {
+    font-size: 0.95rem !important;
+    padding-left: 0.8rem;
+    line-height: 1.7 !important;
+  }
+
+  .about-content p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .about-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .about-stats {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+
+  .stat-divider {
+    width: 60%;
+    height: 1px;
+  }
+
+  .stat-item {
+    flex-direction: row;
+    gap: 0.6rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .stat-number {
+    font-size: 1.2rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+  }
+
+  .tech-stack {
+    padding: 0 5%;
+    gap: 0.4rem;
+  }
+
+  .tech-tag {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.7rem;
+  }
+
+  /* Facts Wrapper - Mobile */
+  .about-facts-wrapper {
+    width: 100%;
+    padding: 0 5%;
+  }
+
+  .facts-title {
+    font-size: 1.1rem;
+  }
+
+  .facts-badge {
+    display: none;
+  }
+
+  /* Show scroll buttons on mobile */
+  .facts-scroll-buttons {
+    display: flex;
+    margin-bottom: 0.8rem;
+  }
+
+  .about-facts {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: visible;
+    gap: 0.8rem;
+    scroll-snap-type: x mandatory;
+    padding: 0.5rem 0 1rem 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    max-height: none;
+    cursor: grab;
+    flex-direction: row;
+  }
+
+  .about-facts:active {
+    cursor: grabbing;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .about-facts::-webkit-scrollbar {
+    display: none;
+  }
+  .about-facts {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .fact-card {
+    min-width: 250px;
+    max-width: 280px;
+    scroll-snap-align: start;
+    padding: 0.7rem 0.9rem;
+    gap: 0.7rem;
+    flex-shrink: 0;
+    min-height: 65px;
+  }
+
+  .fact-card:last-child {
+    margin-right: 0;
+  }
+
+  .fact-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 0.9rem;
+    border-radius: var(--radius, 10px);
+  }
+
+  .fact-info h3 {
+    font-size: 0.8rem;
+  }
+
+  .fact-info p {
+    font-size: 0.75rem;
+    margin-top: 0.15rem;
+  }
+
+  .fact-number {
+    display: none;
+  }
+
+  .facts-scroll-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+}
+
+/* ===========================
+   Small Mobile
+=========================== */
+@media (max-width: 380px) {
+  .fact-card {
+    min-width: 200px;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .fact-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 0.75rem;
+  }
+
+  .fact-info h3 {
+    font-size: 0.7rem;
+  }
+
+  .fact-info p {
+    font-size: 0.65rem;
+  }
+
+  .facts-scroll-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
+  }
+
+  .about-highlight {
+    font-size: 0.85rem !important;
+  }
+
+  .about-content p {
+    font-size: 0.82rem;
+  }
+}
+
+/* ===========================
+   Animation Keyframes
+=========================== */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Floating animation for icons */
+.fact-icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+.fact-card:nth-child(2) .fact-icon {
+  animation-delay: 0.2s;
+}
+.fact-card:nth-child(3) .fact-icon {
+  animation-delay: 0.4s;
+}
+.fact-card:nth-child(4) .fact-icon {
+  animation-delay: 0.6s;
+}
+
+/* ===========================
+   Accessibility
+=========================== */
+@media (prefers-reduced-motion: reduce) {
+  .fact-card,
+  .fact-icon,
+  .facts-scroll-btn,
+  .tech-tag {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .fact-card:hover {
+    transform: none !important;
+  }
+
+  .facts-scroll-btn:hover {
+    transform: none !important;
+  }
+}
+
+/* ===========================
+   Dark Mode Specific
+=========================== */
+[data-theme="dark"] .fact-card {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="dark"] .fact-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .facts-scroll-btn {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .facts-scroll-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .about-stats {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="dark"] .tech-tag {
+  background: rgba(255, 255, 255, 0.05);
+}
