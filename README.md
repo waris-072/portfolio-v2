@@ -59,6 +59,11 @@ It serves as my professional portfolio for internships, junior developer opportu
 ```bash
 git clone https://github.com/waris-072/portfolio-v2.git
 ```
+### Live Portfolio Link
+
+```bash
+https://porfoliios.netlify.app/
+```
 
 ### Navigate into the project
 
